@@ -1,6 +1,6 @@
 /*
-   ESP8266 + FastLED + IR Remote: https://github.com/jasoncoon/esp8266-fastled-audio
-   Copyright (C) 2015-2016 Jason Coon
+   ESP8266 + FastLED + Audio: https://github.com/jasoncoon/esp8266-fastled-audio
+   Copyright (C) 2015-2017 Jason Coon
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ extern "C" {
 
 #include "Field.h"
 
-#define HOSTNAME "Strip-ESP8266-" ///< Hostname. The setup function adds the Chip ID at the end.
+#define HOSTNAME "ESP8266-" ///< Hostname. The setup function adds the Chip ID at the end.
 
 //#define RECV_PIN D4
 //IRrecv irReceiver(RECV_PIN);
