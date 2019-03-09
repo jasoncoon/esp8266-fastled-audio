@@ -6,6 +6,10 @@ Control an addressable LED strip with an ESP8266 via a web browser or infrared r
 Hardware
 --------
 
+MSGEQ7  breakout board (7-band graphic equalizer for audio):
+
+[![MSGEQ7  breakout board](https://i.ebayimg.com/images/g/XMoAAOSw0e9UwT9y/s-l300.jpg)](https://www.ebay.com/itm/MSGEQ7-breakout-board-7-band-graphic-equalizer-for-audio-for-Arduino-RPi-PIC-/301210655107)
+
 An ESP8266 development board, such as the [Adafruit HUZZAH ESP8266 Breakout]:
 
 [![Adafruit HUZZAH ESP8266 Breakout](https://cdn-shop.adafruit.com/310x233/2471-10.jpg)](https://www.adafruit.com/products/2471)
@@ -57,6 +61,17 @@ REST Web services
 -----------------
 
 The firmware implements basic [RESTful web services](https://en.wikipedia.org/wiki/Representational_state_transfer) using the ESP8266WebServer library.  Current values are requested with HTTP GETs, and values are set with POSTs using query string parameters.  It can run in connected or standalone access point modes.
+
+Audio
+-----
+
+Hook the MSGEQ7 breakout board up:
+
+```
+#define MSGEQ7_AUDIO_PIN A0
+#define MSGEQ7_STROBE_PIN D0
+#define MSGEQ7_RESET_PIN  D3
+```
 
 Infrared Remote Control
 -----------------------
