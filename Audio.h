@@ -165,19 +165,19 @@ void spectrumPaletteWaves()
   CRGB color = nblend(color6, color5, 256 / 8);
   color = nblend(color, color1, 256 / 2);
 
-  leds[CENTER_LED] = color;
-  leds[CENTER_LED].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED]] = color;
+  leds[fibonacciToPhysical[CENTER_LED]].fadeToBlackBy(spectrumByte[3] / 12);
 
-  leds[CENTER_LED - 1] = color;
-  leds[CENTER_LED - 1].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED - 1]] = color;
+  leds[fibonacciToPhysical[CENTER_LED - 1]].fadeToBlackBy(spectrumByte[3] / 12);
 
   //move to the left
   for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
-    leds[i] = leds[i - 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
-    leds[i] = leds[i + 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
   }
 }
 
@@ -194,19 +194,19 @@ void spectrumPaletteWaves2()
   CRGB color = nblend(color6, color5, 256 / 8);
   color = nblend(color, color1, 256 / 2);
 
-  leds[CENTER_LED] = color;
-  leds[CENTER_LED].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED]] = color;
+  leds[fibonacciToPhysical[CENTER_LED]].fadeToBlackBy(spectrumByte[3] / 12);
 
-  leds[CENTER_LED - 1] = color;
-  leds[CENTER_LED - 1].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED - 1]] = color;
+  leds[fibonacciToPhysical[CENTER_LED - 1]].fadeToBlackBy(spectrumByte[3] / 12);
 
   //move to the left
   for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
-    leds[i] = leds[i - 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
-    leds[i] = leds[i + 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
   }
 }
 
@@ -216,19 +216,19 @@ void spectrumWaves()
 
   CRGB color = CRGB(spectrumByte[6], spectrumByte[5] / 8, spectrumByte[1] / 2);
 
-  leds[CENTER_LED] = color;
-  leds[CENTER_LED].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED]] = color;
+  leds[fibonacciToPhysical[CENTER_LED]].fadeToBlackBy(spectrumByte[3] / 12);
 
-  leds[CENTER_LED - 1] = color;
-  leds[CENTER_LED - 1].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED - 1]] = color;
+  leds[fibonacciToPhysical[CENTER_LED - 1]].fadeToBlackBy(spectrumByte[3] / 12);
 
   //move to the left
   for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
-    leds[i] = leds[i - 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
-    leds[i] = leds[i + 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
   }
 }
 
@@ -238,19 +238,19 @@ void spectrumWaves2()
 
   CRGB color = CRGB(spectrumByte[5] / 8, spectrumByte[6], spectrumByte[1] / 2);
 
-  leds[CENTER_LED] = color;
-  leds[CENTER_LED].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED]] = color;
+  leds[fibonacciToPhysical[CENTER_LED]].fadeToBlackBy(spectrumByte[3] / 12);
 
-  leds[CENTER_LED - 1] = color;
-  leds[CENTER_LED - 1].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED - 1]] = color;
+  leds[fibonacciToPhysical[CENTER_LED - 1]].fadeToBlackBy(spectrumByte[3] / 12);
 
   //move to the left
   for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
-    leds[i] = leds[i - 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
-    leds[i] = leds[i + 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
   }
 }
 
@@ -260,19 +260,19 @@ void spectrumWaves3()
 
   CRGB color = CRGB(spectrumByte[1] / 2, spectrumByte[5] / 8, spectrumByte[6]);
 
-  leds[CENTER_LED] = color;
-  leds[CENTER_LED].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED]] = color;
+  leds[fibonacciToPhysical[CENTER_LED]].fadeToBlackBy(spectrumByte[3] / 12);
 
-  leds[CENTER_LED - 1] = color;
-  leds[CENTER_LED - 1].fadeToBlackBy(spectrumByte[3] / 12);
+  leds[fibonacciToPhysical[CENTER_LED - 1]] = color;
+  leds[fibonacciToPhysical[CENTER_LED - 1]].fadeToBlackBy(spectrumByte[3] / 12);
 
   //move to the left
   for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
-    leds[i] = leds[i - 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
-    leds[i] = leds[i + 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
   }
 }
 
@@ -294,7 +294,7 @@ void analyzerColumns()
       if (j >= NUM_LEDS || j >= columnEnd)
         continue;
 
-      leds[j] = CHSV(i * 40, 255, 255);
+      leds[fibonacciToPhysical[j]] = CHSV(i * 40, 255, 255);
     }
   }
 }
@@ -316,13 +316,13 @@ void analyzerPeakColumns()
 
     for (uint8_t j = columnStart; j < columnStart + columnHeight; j++) {
       if (j < NUM_LEDS && j <= columnEnd) {
-        leds[j] = CHSV(i * 40, 255, 128);
+        leds[fibonacciToPhysical[j]] = CHSV(i * 40, 255, 128);
       }
     }
 
     uint8_t k = columnStart + peakHeight;
     if (k < NUM_LEDS && k <= columnEnd)
-      leds[k] = CHSV(i * 40, 255, 255);
+      leds[fibonacciToPhysical[k]] = CHSV(i * 40, 255, 255);
   }
 }
 
@@ -331,16 +331,33 @@ void beatWaves()
   fade_down(2);
 
   if (beatDetect()) {
-    leds[CENTER_LED] = CRGB::Red;
+    CRGBPalette16 palette = palettes[currentPaletteIndex];
+    CRGB color = ColorFromPalette(palette, gHue);
+    leds[fibonacciToPhysical[CENTER_LED]] = color;
   }
 
   //move to the left
   for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
-    leds[i] = leds[i - 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
-    leds[i] = leds[i + 1];
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
+  }
+}
+
+void beatWaves2()
+{
+  fade_down(2);
+
+  if (beatDetect()) {
+    CRGB color = ColorFromPalette(gCurrentPalette, gHue);
+    leds[fibonacciToPhysical[0]] = color;
+  }
+
+  //move to the left
+  for (int i = NUM_LEDS - 1; i > 0; i--) {
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
   }
 }
 
@@ -361,13 +378,13 @@ void drawVU() {
     if (pixelBrightness < 0) pixelBrightness = 0;
 
     int pixelPaletteIndex = senseValue / VUPaletteFactor - 15;
-    if (pixelPaletteIndex > 240) pixelPaletteIndex = 240;
-    if (pixelPaletteIndex < 0) pixelPaletteIndex = 0;
+    if (pixelPaletteIndex > 240) pixelPaletteIndex = gHue - pixelPaletteIndex;
+    if (pixelPaletteIndex < 0) pixelPaletteIndex = gHue + pixelPaletteIndex;
 
     pixelColor = ColorFromPalette(palettes[currentPaletteIndex], pixelPaletteIndex, pixelBrightness);
 
-    leds[x] = pixelColor;
-    leds[NUM_LEDS - x - 1] = pixelColor;
+    leds[fibonacciToPhysical[x]] = pixelColor;
+    leds[fibonacciToPhysical[NUM_LEDS - x - 1]] = pixelColor;
   }
 }
 
@@ -376,10 +393,10 @@ void drawVU2() {
   
   for (uint8_t i = 0; i < NUM_LEDS; i++) {
     if(i <= avg) {
-      leds[i] = ColorFromPalette(palettes[currentPaletteIndex], (240 / NUM_LEDS) * i);
+      leds[fibonacciToPhysical[i]] = ColorFromPalette(palettes[currentPaletteIndex], gHue + i * 2);
     }
     else {
-      leds[i] = CRGB::Black;
+      leds[fibonacciToPhysical[i]] = CRGB::Black;
     }
   }
 }

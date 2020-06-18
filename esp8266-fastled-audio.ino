@@ -64,7 +64,7 @@ ESP8266HTTPUpdateServer httpUpdateServer;
 #define DATA_PIN      D5
 #define LED_TYPE      WS2812B
 #define COLOR_ORDER   GRB
-#define NUM_LEDS      144
+#define NUM_LEDS      128
 
 #define CENTER_LED    NUM_LEDS / 2
 
@@ -165,6 +165,7 @@ typedef struct {
 } PatternAndName;
 typedef PatternAndName PatternAndNameList[];
 
+#include "Map.h"
 #include "Twinkles.h"
 #include "TwinkleFOX.h"
 #include "Audio.h"
@@ -182,6 +183,8 @@ PatternAndNameList patterns = {
   { analyzerColumns,        "Analyzer Columns" },
   { analyzerPeakColumns,    "Analyzer Peak Columns" },
   { beatWaves,              "BeatWaves" },
+  { beatWaves2,              "BeatWaves2" },
+  
   { pride,                  "Pride" },
   { colorWaves,             "Color Waves" },
 
