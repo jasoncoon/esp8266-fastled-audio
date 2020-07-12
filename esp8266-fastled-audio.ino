@@ -64,7 +64,7 @@ ESP8266HTTPUpdateServer httpUpdateServer;
 #define DATA_PIN      D5
 #define LED_TYPE      WS2812B
 #define COLOR_ORDER   GRB
-#define NUM_LEDS      128
+#define NUM_LEDS      256
 
 #define CENTER_LED    NUM_LEDS / 2
 
@@ -176,14 +176,16 @@ PatternAndNameList patterns = {
   { spectrumWaves,          "Spectrum Waves" },
   { spectrumPaletteWaves,   "Spectrum Palette Waves" },
   { spectrumPaletteWaves2,  "Spectrum Palette Waves 2" },
+  { spectrumPaletteWaves3,  "Spectrum Palette Waves 3" },
   { spectrumWaves2,         "Spectrum Waves 2" },
   { spectrumWaves3,         "Spectrum Waves 3" },
   { drawVU,                 "VU" },
   { drawVU2,                "VU2" },
   { analyzerColumns,        "Analyzer Columns" },
   { analyzerPeakColumns,    "Analyzer Peak Columns" },
+  { analyzerSpirals,        "Analyzer Spirals" },
   { beatWaves,              "BeatWaves" },
-  { beatWaves2,              "BeatWaves2" },
+  { beatWaves2,             "BeatWaves2" },
   
   { pride,                  "Pride" },
   { colorWaves,             "Color Waves" },

@@ -154,9 +154,39 @@ void fade_down(uint8_t value) {
   }
 }
 
+void spectrumPaletteWaves3()
+{
+  //  fade_down(1);
+
+  CRGBPalette16 palette = palettes[currentPaletteIndex];
+
+  CRGB color6 = ColorFromPalette(palette, spectrumByte[6], spectrumByte[6]);
+  CRGB color5 = ColorFromPalette(palette, spectrumByte[5] / 8, spectrumByte[5] / 8);
+  CRGB color1 = ColorFromPalette(palette, spectrumByte[1] / 2, spectrumByte[1] / 2);
+
+  CRGB color = nblend(color6, color5, 256 / 8);
+  color = nblend(color, color1, 256 / 2);
+
+  leds[fibonacciToPhysical[CENTER_LED]] = color;
+  leds[fibonacciToPhysical[CENTER_LED]].fadeToBlackBy(spectrumByte[3] / 12);
+
+  leds[fibonacciToPhysical[CENTER_LED - 1]] = color;
+  leds[fibonacciToPhysical[CENTER_LED - 1]].fadeToBlackBy(spectrumByte[3] / 12);
+
+  //move to the left
+  for (int i = NUM_LEDS - 1; i > CENTER_LED; i--) {
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i - 1]];
+  }
+  // move to the right
+  for (int i = 0; i < CENTER_LED; i++) {
+    leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
+  }
+}
+
+
 void spectrumPaletteWaves()
 {
-//  fade_down(1);
+  //  fade_down(1);
 
   CRGB color6 = ColorFromPalette(gCurrentPalette, spectrumByte[6], spectrumByte[6]);
   CRGB color5 = ColorFromPalette(gCurrentPalette, spectrumByte[5] / 8, spectrumByte[5] / 8);
@@ -183,7 +213,7 @@ void spectrumPaletteWaves()
 
 void spectrumPaletteWaves2()
 {
-//  fade_down(1);
+  //  fade_down(1);
 
   CRGBPalette16 palette = palettes[currentPaletteIndex];
 
@@ -273,6 +303,27 @@ void spectrumWaves3()
   // move to the right
   for (int i = 0; i < CENTER_LED; i++) {
     leds[fibonacciToPhysical[i]] = leds[fibonacciToPhysical[i + 1]];
+  }
+}
+
+void analyzerSpirals()
+{
+  fill_solid(leds, NUM_LEDS, CRGB::Black);
+
+  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+
+  uint8_t start[7] = { 3, 5, 8, 13, 21, 34, 55 };
+  const uint8_t hueInc = 256 / 7;
+  uint8_t hue = 0;
+
+  CRGBPalette16 palette = palettes[currentPaletteIndex];
+
+  for (uint8_t i = 0; i < 7; i++) {
+    uint8_t end = map8(spectrumPeaks[i], 1, NUM_LEDS);
+    for (uint16_t j = start[i]; j < end; j += start[i]) {
+      leds[fibonacciToPhysical[j]] = ColorFromPalette(palette, hue);
+    }
+    hue += hueInc;
   }
 }
 
@@ -371,7 +422,7 @@ void drawVU() {
   const float xScale = 255.0 / (NUM_LEDS / 2);
   float specCombo = (spectrumDecay[0] + spectrumDecay[1] + spectrumDecay[2] + spectrumDecay[3]) / 4.0;
 
-  for (byte x = 0; x < NUM_LEDS / 2; x++) {
+  for (uint16_t x = 0; x < NUM_LEDS / 2; x++) {
     int senseValue = specCombo / VUScaleFactor - xScale * x;
     int pixelBrightness = senseValue * VUFadeFactor;
     if (pixelBrightness > 255) pixelBrightness = 255;
@@ -390,9 +441,9 @@ void drawVU() {
 
 void drawVU2() {
   uint8_t avg = map8(spectrumAvg, 0, NUM_LEDS - 1);
-  
-  for (uint8_t i = 0; i < NUM_LEDS; i++) {
-    if(i <= avg) {
+
+  for (uint16_t i = 0; i < NUM_LEDS; i++) {
+    if (i <= avg) {
       leds[fibonacciToPhysical[i]] = ColorFromPalette(palettes[currentPaletteIndex], gHue + i * 2);
     }
     else {
