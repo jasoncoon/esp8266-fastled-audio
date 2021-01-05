@@ -8,7 +8,7 @@ Hardware
 
 MSGEQ7  breakout board (7-band graphic equalizer for audio):
 
-[![MSGEQ7  breakout board](https://i.ebayimg.com/images/g/XMoAAOSw0e9UwT9y/s-l300.jpg)](https://www.ebay.com/itm/MSGEQ7-breakout-board-7-band-graphic-equalizer-for-audio-for-Arduino-RPi-PIC-/301210655107)
+[![MSGEQ7  breakout board](https://i.ebayimg.com/images/g/XMoAAOSw0e9UwT9y/s-l300.jpg)](https://www.ebay.com/itm/353131861821)
 
 An ESP8266 development board, such as the [Adafruit HUZZAH ESP8266 Breakout]:
 
